@@ -11,7 +11,7 @@ public class UploadController {
 	@GetMapping("/")
 	public String indexPage()
 	{
-		System.out.println("I JUST WANT TO LET U KNOW I HEAR YOU!!!!!!");
+		//System.out.println("I JUST WANT TO LET U KNOW I HEAR YOU!!!!!!");
 		
 		return "index";
 	}
@@ -19,7 +19,7 @@ public class UploadController {
 	@GetMapping("/upload")
 	public String displayUpload()
 	{
-		System.out.println("I JUST WANT TO LET U KNOW I HEAR YOU FROM UPLOAD !!!!!!");
+		//System.out.println("I JUST WANT TO LET U KNOW I HEAR YOU FROM UPLOAD !!!!!!");
 		return "index";
 	}
 
