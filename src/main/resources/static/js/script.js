@@ -83,7 +83,7 @@ function startUploading() {
     oXHR.addEventListener('load', uploadFinish, false);
     oXHR.addEventListener('error', uploadError, false);
     oXHR.addEventListener('abort', uploadAbort, false);
-    oXHR.open('POST', 'upload.php');
+    oXHR.open('POST', '/process/csv/upload');
     oXHR.send(vFD);
     // set inner timer
     oTimer = setInterval(doInnerUpdates, 300);

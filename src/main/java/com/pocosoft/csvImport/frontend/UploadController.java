@@ -7,6 +7,8 @@ import javax.batch.operations.JobRestartException;
 import org.springframework.batch.core.JobParametersInvalidException;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,9 +36,11 @@ public class UploadController {
 	}
 	
 	@PostMapping("/process/csv/upload")
-	public String  processUploadedCSV(@RequestParam("csv_file") MultipartFile multipartFile)throws IOException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException
+	public ResponseEntity<String>  processUploadedCSV(@RequestParam("csv_file") MultipartFile file)throws IOException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException
 	{
-		return "";
+		String fileName = file.getOriginalFilename();
+		System.out.println("File Name is " + fileName);
+		return new ResponseEntity<String>("Loaded Succesfully",HttpStatus.OK);
 	}
 
 }
