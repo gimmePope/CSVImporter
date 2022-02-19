@@ -1,9 +1,9 @@
-<html lang="en" >
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8" />
         <title>Pure HTML5 file upload | Script Tutorials</title>
-        <link href="css/main.css" rel="stylesheet" type="text/css" />
-        <script src="js/script.js"></script>
+        <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css" />
+        <script th:src="@{js/script.js}"></script>
     </head>
     <body>
         <header>
@@ -11,7 +11,7 @@
         </header>
         <div class="container">
             <div class="upload_form_cont">
-                <form id="upload_form" enctype="multipart/form-data" method="post" action="upload.php">
+                <form id="upload_form" enctype="multipart/form-data" method="post" th:action="@{/process/csv/upload}">
                     <div>
                         <div><label for="csv_file">Please select csv file</label></div>
                         <div><input type="file" name="csv_file" id="csv_file" onchange="fileSelected();" /></div>
