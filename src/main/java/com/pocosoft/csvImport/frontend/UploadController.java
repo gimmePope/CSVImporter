@@ -67,7 +67,7 @@ public class UploadController {
 			System.out.println("File Name is " + fileName);
 			//Save upload file
 			File fileToImport = new File(uploadPath + formatter.format(new Date()) + fileName);
-			
+			System.out.println("Path: "+fileToImport.getAbsolutePath());
 			//delete if file already exist in upload directory
 			
 			if(fileToImport.exists())
