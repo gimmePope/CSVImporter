@@ -51,6 +51,7 @@ public class ImportCSVJobConfig<JobCompletionNotificationListener> {
     public FlatFileItemReader<EmployeeDetail> importReader(@Value("#{jobParameters[fullPathFileName]}") String pathToFile) {
         FlatFileItemReader<EmployeeDetail> reader = new FlatFileItemReader<>();
         reader.setResource(new FileSystemResource(pathToFile));
+        reader.setLinesToSkip(1);
         reader.setLineMapper(new DefaultLineMapper<EmployeeDetail>() {{
             setLineTokenizer(new DelimitedLineTokenizer() {{
                 setNames(new String[]{"name", "email", "address", "telephone"});
